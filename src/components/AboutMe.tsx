@@ -1,7 +1,8 @@
 import React from "react";
 import Img from "../components/ImageComp"
 import ArrowIcon from "../components/Icons/ArrowIcon";
-export default function AboutMe(props) {
+
+export default function AboutMe() {
   const technologies = [
     ["Next.js", "React.js","React Native","JavaScript (ES6+)", "Tailwind CSS"],
     ["Node.js", "MongoDB","Prisma", "TypeScript", "Framer Motion"],
@@ -54,7 +55,7 @@ export default function AboutMe(props) {
             <div className="font-Header tracking-wide flex flex-row space-x-16">
               <div className="flex flex-row space-x-2 items-center">
                 <div className="flex flex-col space-y-4 sm:text-base text-sm">
-                  {technologies[0].map((tech, index) => {
+                  {technologies[0]?.map((tech, index) => {
                     return (
                       <div key={index} className="flex flex-row items-center space-x-2">
                         <ArrowIcon className={"h-3 w-3 text-AAsecondary"} />
@@ -66,7 +67,7 @@ export default function AboutMe(props) {
               </div>
               <div className="flex flex-row space-x-2 items-center">
                 <div className="flex flex-col space-y-4 sm:text-base text-sm">
-                  {technologies[1].map((tech, index) => {
+                  {technologies[1]?.map((tech, index) => {
                     return (
                       <div key={index} className="flex flex-row items-center space-x-2">
                         <ArrowIcon className={"h-3 w-3 text-AAsecondary"} />
