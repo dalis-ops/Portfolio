@@ -3,7 +3,7 @@ import { motion } from "../../node_modules/framer-motion/dist/framer-motion";
 import GithubIcon from "./Icons/GithubIcon";
 import LinkedinIcon from "./Icons/LinkedinIcon";
 
-const IconClickableWithAnimation = props => {
+const IconClickableWithAnimation = (props :  {Icon : string, href: string}) => {
   return (
     <motion.div
       whileHover={{

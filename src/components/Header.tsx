@@ -9,7 +9,7 @@ import AppContext from "./AppContext";
 const addClass = (ref: any, myclass: string) => {
   ref.current?.classLIst.add(myclass);
 };
-const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
+const Header = (props: { finishedLoading: boolean,sectionsRef :string }) => {
   const RefNavBar = useRef<HTMLDivElement>(null);
   const [ShowElement, setShowElement] = useState(false);
   const [rotate, setRotate] = useState<boolean>(false);
