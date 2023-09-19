@@ -1,11 +1,13 @@
-import React from "react";
-import { motion } from "../../node_modules/framer-motion/dist/framer-motion";
-
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function MyName(props: { finishedLoading: boolean }) {
-  const router = useRouter();
+  const [text] = useState([
+		"develop mobile application using React Native,",
+		"build interactive UI using React,",
+		"develop responsive websites using Next.js."
+	]);
+
   return (
     <div
       

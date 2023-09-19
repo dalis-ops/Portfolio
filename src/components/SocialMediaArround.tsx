@@ -1,9 +1,9 @@
 import React from "react";
-import { motion } from "../../node_modules/framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import GithubIcon from "./Icons/GithubIcon";
 import LinkedinIcon from "./Icons/LinkedinIcon";
 
-const IconClickableWithAnimation = (props :  {Icon : string, href: string}) => {
+const IconClickableWithAnimation = (props :  {Icon : any, href: string}) => {
   return (
     <motion.div
       whileHover={{

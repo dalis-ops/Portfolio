@@ -2,7 +2,7 @@ import React from "react";
 import GithubIcon from "./Icons/GithubIcon";
 import LinkedinIcon from "./Icons/LinkedinIcon";
 
-const ClickableIcon = (props : {Icon: string, href: string}) => {
+const ClickableIcon = (props : {Icon: any, href: string}) => {
   return (
     <a href={props.href} className="" target={"_blank"} rel="noreferrer">
       <props.Icon className={"w-5 h-5 text-gray-400 hover:text-AAsecondary fill-current hover:cursor-pointer"} />

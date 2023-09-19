@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
-const IconMenu = (props: { rotate  ; setRotate; setShowElement; ShowElement,finishedLoading }) => {
+const IconMenu = (props: { rotate : any  ; setRotate : any; setShowElement : any; ShowElement : any,finishedLoading : any }) => {
   return (
     <div
       className="md:hidden  text-white space-y-2 left-0 hover:cursor-pointer mt-2"

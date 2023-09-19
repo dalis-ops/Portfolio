@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function ArrowIcon(props) {
+type Props = {
+  className : string;
+};
+
+export default function ArrowIcon(props : Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

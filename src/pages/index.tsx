@@ -5,9 +5,9 @@ import { useContext, useEffect, useState, useRef } from "react";
 import SocialMediaArround from "../components/SocialMediaArround";
 import AboutMe from "../components/AboutMe";
 import ThisCantBeReached from "../components/ThisCantBeReached";
-// import WhereIHaveWorked from "../components/WhereIHaveWorked";
+import WhereIHaveWorked from "../components/WhereIHaveWorked/WhereIHaveWorked";
 // import SomethingIveBuilt from "../components/Home/SomethingIveBuilt/SomethingIveBuilt";
-// import GetInTouch from "../components/Home/GetInTouch/GetInTouch";
+import GetInTouch from "../components/GetInTouch";
 import Footer from "../components/Footer";
 import AppContext from "../components/AppContext";
 import Aos from "aos";
@@ -26,14 +26,6 @@ export default function Home() {
   useEffect(() => {
     // remove the interval Cookie timer setter when
     clearInterval(context.sharedState.userdata.timerCookieRef.current);
-    if (typeof window !== "undefined") {
-      // remove UserDataPuller project EventListeners
-      window.removeEventListener("resize", context.sharedState.userdata.windowSizeTracker.current);
-      window.removeEventListener("mousemove", context.sharedState.userdata.mousePositionTracker.current, false);
-      // remove Typing project EventListeners
-      window.removeEventListener("resize", context.sharedState.typing.eventInputLostFocus);
-      document.removeEventListener("keydown", context.sharedState.typing.keyboardEvent);
-    }
     setTimeout(() => {
       setShowElement(true);
     }, 4500);
@@ -90,9 +82,9 @@ export default function Home() {
         <MyName finishedLoading={context.sharedState.finishedLoading} />
         <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
         {context.sharedState.finishedLoading ? <AboutMe ref={aboutRef} /> : <></>}
-        {/* {context.sharedState.finishedLoading ? <WhereIHaveWorked /> : <></>}
-        {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>}
-        {context.sharedState.finishedLoading ? <GetInTouch /> : <></>} */}
+         {context.sharedState.finishedLoading ? <WhereIHaveWorked /> : <></>}
+        {/* {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>} */}
+        {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}
         {context.sharedState.finishedLoading ? (
           <Footer githubUrl={"https://github.com/dalis-ops/portfolio"} hideSocialsInDesktop={true} />
         ) : (

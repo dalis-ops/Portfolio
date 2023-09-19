@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 
 export default function Logo(props: { finishedLoading: boolean }) {
   return (
@@ -9,8 +9,8 @@ export default function Logo(props: { finishedLoading: boolean }) {
         animate={{ y: 0, opacity: 1 }}
         transition={{
           type: "spring",
-          y: { delay:  0 , duration: 0 },
-          opacity: { delay:  0, duration: 0 },
+          y: { delay: props.finishedLoading ? 0 : 8, duration: 0 },
+          opacity: { delay: props.finishedLoading ? 0 : 8, duration: 0 },
         }}
         className=" relative h-12 w-10 "
       >
