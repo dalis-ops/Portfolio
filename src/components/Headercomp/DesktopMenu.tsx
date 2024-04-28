@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link as ReactScrollLink } from "react-scroll";
+import { useRouter } from "next/router";
 
 export default function DesktopMenu(props: { finishedLoading: boolean }) {
+  const router = useRouter()
+
   return (
     <div className="font-mono text-xs md:flex hidden flex-row items-center space-x-8 ">
       <motion.div
@@ -105,7 +108,7 @@ export default function DesktopMenu(props: { finishedLoading: boolean }) {
           duration: props.finishedLoading ? 0 : 1.2,
           delay: props.finishedLoading ? 0 : 10.2,
         }}
-        // onClick={()=>{router.push("/resume.pdf")}}
+        onClick={()=>{void router.push("/resume.pdf")}}
         className="text-AAsecondary border border-spacing-2 py-2 px-3 rounded-sm border-AAsecondary hover:bg-ResumeButtonHover"
       >
         Resume

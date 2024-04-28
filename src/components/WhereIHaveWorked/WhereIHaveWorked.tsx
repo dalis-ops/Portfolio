@@ -124,6 +124,7 @@ const CompaniesBar = (props : BarProps ) => {
             CompanyNameBackgroundColorGreen={[true, false, false, false, false]}
             setDescriptionJob={props.setDescriptionJob}
           />
+<<<<<<< HEAD
           <CompanyButton
             ButtonOrderOfcompanyNameBackgroundColorGreen={1}
             CompanyName="Freelance"
@@ -133,6 +134,8 @@ const CompaniesBar = (props : BarProps ) => {
             CompanyNameBackgroundColorGreen={[false, true, false, false, false]}
             setDescriptionJob={props.setDescriptionJob}
           />
+=======
+>>>>>>> c9b1a872d87dc801a77c9cb94d6d236253d413c9
         </div>
         <div className="block md:hidden w-[760px] h-0.5 rounded bg-gray-500">
           <motion.div animate={{ x: barAbovePosition }} className="w-[128px] h-0.5 rounded bg-AAsecondary"></motion.div>
