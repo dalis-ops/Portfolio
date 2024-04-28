@@ -9,38 +9,43 @@ import WhereIHaveWorked from "../components/WhereIHaveWorked/WhereIHaveWorked";
 // import SomethingIveBuilt from "../components/Home/SomethingIveBuilt/SomethingIveBuilt";
 import GetInTouch from "../components/GetInTouch";
 import Footer from "../components/Footer";
-import AppContext from "../components/AppContext";
+import AppContext, { AppContextType } from "../components/AppContext";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
+import SomethingIveBuilt from "~/components/SomethingIveBuilt/SomethingIveBuilt";
 
 export default function Home() {
   const [ShowElement, setShowElement] = useState(false);
   const [ShowThisCantBeReached, setShowThisCantBeReached] = useState(true);
   const [ShowMe, setShowMe] = useState(false);
   // context Variable to clearInterval
-  const context = useContext(AppContext);
-  const aboutRef = useRef<HTMLDivElement>(null);
+  const context = useContext<AppContextType>(AppContext);
+  // const aboutRef = useRef<HTMLDivElement>(null);
   const homeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // remove the interval Cookie timer setter when
-    clearInterval(context.sharedState.userdata.timerCookieRef.current);
-    setTimeout(() => {
-      setShowElement(true);
-    }, 4500);
-
-    setTimeout(() => {
-      setShowThisCantBeReached(false);
-    }, 5400);
-    // ? INFORMATIONAL next function will show the component after changing the state of ShowMe
-    setTimeout(() => {
-      setShowElement(false);
-      setShowMe(true);
-      context.sharedState.finishedLoading = true;
-      context.setSharedState(context.sharedState);
-    }, 10400);
-  }, [context, context.sharedState]);
+    // Check if context is truthy before accessing its properties
+    if (context) {
+      clearInterval(context?.sharedState?.userdata?.timerCookieRef?.current);
+      setTimeout(() => {
+        setShowElement(true);
+      }, 4500);
+      setTimeout(() => {
+        setShowThisCantBeReached(false);
+      }, 5400);
+      // ? INFORMATIONAL next function will show the component after changing the state of ShowMe
+      setTimeout(() => {
+        setShowElement(false);
+        setShowMe(true);
+        if (context.sharedState) {
+          context.sharedState.finishedLoading = true;
+          context.setSharedState(context.sharedState);
+        }
+      }, 10400);
+    }
+  }, [context, context?.sharedState]);
+  
 
   useEffect(() => {
     Aos.init({ duration: 2000, once: true });
@@ -81,7 +86,7 @@ export default function Home() {
         <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
         <MyName finishedLoading={context.sharedState.finishedLoading} />
         <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
-        {context.sharedState.finishedLoading ? <AboutMe ref={aboutRef} /> : <></>}
+        {context.sharedState.finishedLoading ? <AboutMe /> : <></>}
          {context.sharedState.finishedLoading ? <WhereIHaveWorked /> : <></>}
         {/* {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>} */}
         {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}

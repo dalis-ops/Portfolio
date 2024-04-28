@@ -1,10 +1,16 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
 
-const IconMenu = (props: { rotate : any  ; setRotate : any; setShowElement : any; ShowElement : any,finishedLoading : any }) => {
+const IconMenu = (props: {
+  rotate: boolean;
+  setRotate: Dispatch<SetStateAction<boolean>>;
+  setShowElement: Dispatch<SetStateAction<boolean>>;
+  ShowElement: boolean;
+  finishedLoading: boolean;
+}) => {
   return (
     <div
-      className="md:hidden  text-white space-y-2 left-0 hover:cursor-pointer mt-2"
+      className="left-0  mt-2 space-y-2 text-white hover:cursor-pointer md:hidden"
       onClick={() => {
         props.setRotate(!props.rotate);
         props.setShowElement(!props.ShowElement);
@@ -14,9 +20,11 @@ const IconMenu = (props: { rotate : any  ; setRotate : any; setShowElement : any
         <motion.div
           animate={props.rotate ? { y: 10, rotate: 45 } : { rotate: 0, y: 0 }}
           transition={
-            props.rotate ? { y: 0.15, rotate: { delay: 0.2 } } : { y: { delay: 0.2 }, rotate: { duration: 0.2 } }
+            props.rotate
+              ? { y: 0.15, rotate: { delay: 0.2 } }
+              : { y: { delay: 0.2 }, rotate: { duration: 0.2 } }
           }
-          className="w-8 h-0.5 rounded bg-AAsecondary"
+          className="h-0.5 w-8 rounded bg-AAsecondary"
         ></motion.div>
       </div>
       <motion.div
@@ -24,15 +32,21 @@ const IconMenu = (props: { rotate : any  ; setRotate : any; setShowElement : any
         transition={{ opacity: { duration: 0 } }}
         className="flex justify-end"
       >
-        <div className="w-6 h-0.5 rounded bg-AAsecondary"></div>
+        <div className="h-0.5 w-6 rounded bg-AAsecondary"></div>
       </motion.div>
       <div className="flex justify-end">
         <motion.div
-          animate={props.rotate ? { y: -10, width: "150%", rotate: -45 } : { y: 0, rotate: 0, width: "50%" }}
-          transition={
-            props.rotate ? { y: 0.15, rotate: { delay: 0.2 } } : { y: { delay: 0.2 }, rotate: { duration: 0.2 } }
+          animate={
+            props.rotate
+              ? { y: -10, width: "150%", rotate: -45 }
+              : { y: 0, rotate: 0, width: "50%" }
           }
-          className="w-4 h-0.5 rounded bg-AAsecondary"
+          transition={
+            props.rotate
+              ? { y: 0.15, rotate: { delay: 0.2 } }
+              : { y: { delay: 0.2 }, rotate: { duration: 0.2 } }
+          }
+          className="h-0.5 w-4 rounded bg-AAsecondary"
         ></motion.div>
       </div>
     </div>

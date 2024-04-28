@@ -5,6 +5,14 @@ import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
 export default function GeospatialWorld() {
   const tasks = [
     {
+      text: "Led the developement of Web applicaion using T3 Stack (Next JS, tRPC, Prisma and MongoDB), showcasing details of Company, User profiles and Case Studies.",
+      keywords: ["T3 Stack", "Next JS", "Prisma", "MongoDB", "tRPC"],
+    },
+    {
+      text: "This web app allow user to search by apply different filter and with help of map and also save their recent search and use it for later uses.",
+      keywords: ["filter", "map"],
+    },
+    {
       text: "Led the developement of cross-platform mobile applicaion using React Native, showcasing details from Various events conducted.",
       keywords: ["React Native"],
     },
@@ -14,7 +22,7 @@ export default function GeospatialWorld() {
     },
     {
       text: "Interfaced with developers on a daily basis, providing technological expertise.",
-      keywords: [],
+      keywords: ["Soft skills"],
     },
   ];
 
@@ -24,7 +32,7 @@ export default function GeospatialWorld() {
         <div className="flex flex-col spacey-y-2">
           {/* Title */}
           <span className="text-gray-100 sm:text-lg text-sm font-Arimo tracking-wide">
-            Software Engineer <span className="text-AAsecondary">@ App Development</span>
+            Software Development <span className="text-AAsecondary">@ App and Web Developer </span>
           </span>
           {/* Date */}
           <span className="font-mono text-xs text-gray-500">June 2022 - Present</span>

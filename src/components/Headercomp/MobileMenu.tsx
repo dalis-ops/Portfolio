@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
+import { Dispatch, SetStateAction } from "react";
 import { Link } from "react-scroll";
-const MobileMenu = (props : any) => {
+
+type Props = {
+  rotate: boolean;
+  ShowElement: boolean;
+  setRotate: Dispatch<SetStateAction<boolean>>
+  setShowElement:Dispatch<SetStateAction<boolean>>
+}
+
+const MobileMenu = (props : Props) => {
   const closeMenu = () => {
-    props.setRotate(!props.rotate);
-    props.setShowElement(!props.ShowElement);
+    props.setRotate(props.rotate);
+    props.setShowElement(props.ShowElement);
   };
   return (
     <>
@@ -55,7 +64,7 @@ const MobileMenu = (props : any) => {
               Experience
             </span>
           </Link>
-          <Link
+          {/* <Link
             to="SomethingIveBuiltSection"
             spy={true}
             smooth={true}
@@ -71,7 +80,7 @@ const MobileMenu = (props : any) => {
             >
               Work
             </span>
-          </Link>
+          </Link> */}
           <Link
             to="GetInTouchSection"
             spy={true}
@@ -81,7 +90,7 @@ const MobileMenu = (props : any) => {
             onClick={() => closeMenu()}
             className="flex flex-col text-center space-y-2"
           >
-            <span className="text-AAsecondary text-xs font-mono">04.</span>
+            <span className="text-AAsecondary text-xs font-mono">03.</span>
             <span
               className="text-white font-Text2 text-sm sm:text-base
              hover:text-AAsecondary hover:cursor-pointer duration-300"

@@ -13,7 +13,7 @@ export default function GetInTouch() {
         <div className="flex flex-row items-center space-x-2">
           <span className="font-sans text-sm text-AAsecondary  sm:text-base">
             {" "}
-            04.
+            03.
           </span>
           <span className=" font-sans text-base text-AAsecondary">
             What&apos;s Next?
